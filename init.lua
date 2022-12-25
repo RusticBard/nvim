@@ -477,5 +477,9 @@ require("nvim-tree").setup({
   },
 })
 
+-- nvim-tree toggle keymap
+vim.keymap.set({ 'n' }, '<leader>ff', '<Cmd>NvimTreeFindFileToggle<CR>', { silent = true })
+
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
