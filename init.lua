@@ -1,6 +1,6 @@
 require "frostbitten-jello.options"
 require "frostbitten-jello.keymaps"
-require "frostbitten-jello.plugins"
+require "frostbitten-jello.packer"
 require "frostbitten-jello.treesitter"
 require "frostbitten-jello.nvim-tree"
 require "frostbitten-jello.rose-pine"
