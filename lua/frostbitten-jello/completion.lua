@@ -26,6 +26,7 @@ local on_attach = function(_, bufnr)
     nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
     nmap('<leader>dn', vim.diagnostic.goto_next, '[D]iagnostic [N]ext')
     nmap('<leader>dp', vim.diagnostic.goto_prev, '[D]iagnostic [P]revious')
+    nmap('<leader>rr', vim.lsp.buf.rename, '[R]ename [R]eferences')
 
     -- See `:help K` for why this keymap
     nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
