@@ -52,9 +52,9 @@ local servers = {
     -- clangd = {},
     -- gopls = {},
     -- pyright = {},
-    -- rust_analyzer = {},
     -- tsserver = {},
 
+    rust_analyzer = {},
     sumneko_lua = {
         Lua = {
             workspace = { checkThirdParty = false },

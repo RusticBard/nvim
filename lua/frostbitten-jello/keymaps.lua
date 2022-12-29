@@ -32,3 +32,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- CHADtree
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+
+-- Clear highlights
+vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohl<CR>')
