@@ -11,10 +11,11 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+-- Auto-sync packer on writing to the file
 vim.cmd([[
   augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd!
+    autocmd BufWritePost packer.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -52,6 +53,7 @@ return require('packer').startup({function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
     }
+
 
     -- LSP,completion plugins
     use 'numToStr/Comment.nvim'
