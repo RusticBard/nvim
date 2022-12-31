@@ -1,1 +1,1 @@
-require "lua/frostbitten-jello/colorschemes/rose-pine"
+require "frostbitten-jello/colorschemes/rose-pine"
