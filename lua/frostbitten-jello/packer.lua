@@ -37,6 +37,7 @@ return require('packer').startup({function(use)
         },
         -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
+    use 'debugloop/telescope-undo.nvim'
 
     -- Eyecandy
     use {
@@ -86,7 +87,7 @@ return require('packer').startup({function(use)
     }
 
     -- Finder, file browser
-    use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+    use { 'nvim-telescope/telescope.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
 
