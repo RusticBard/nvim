@@ -15,7 +15,7 @@ local packer_bootstrap = ensure_packer()
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost packer.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -53,7 +53,7 @@ return require('packer').startup({function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
     }
-    use "rebelot/kanagawa.nvim"
+    use 'rebelot/kanagawa.nvim'
 
 
     -- LSP,completion plugins
@@ -82,8 +82,8 @@ return require('packer').startup({function(use)
         },
     }
     use { -- Autocomplete brackets
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
+        'windwp/nvim-autopairs',
+        config = function() require('nvim-autopairs').setup {} end
     }
 
     -- Finder, file browser
@@ -98,7 +98,7 @@ end,
     config = {
         display = {
             open_fn = function()
-                return require("packer.util").float({ border = "rounded" })
+                return require('packer.util').float({ border = 'rounded' })
             end,
         },
     }

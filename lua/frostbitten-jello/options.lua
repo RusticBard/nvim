@@ -1,6 +1,6 @@
-vim.opt.guicursor = ""
-vim.opt.mouse = ""
-vim.opt.mousescroll = "ver:0,hor:0"
+vim.opt.guicursor = ''
+vim.opt.mouse = ''
+vim.opt.mousescroll = 'ver:0,hor:0'
 vim.opt.showmode = false
 
 vim.opt.nu = true
@@ -24,8 +24,8 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.opt.signcolumn = 'yes'
+vim.opt.isfname:append('@-@')
 
 vim.opt.updatetime = 50
 

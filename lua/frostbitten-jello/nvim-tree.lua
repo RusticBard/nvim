@@ -6,39 +6,39 @@ vim.g.loaded_netrwPlugin = 1
 -- local WIDTH_RATIO = 0.5   -- You can change this too
 
 -- OR setup with some options
-require("nvim-tree").setup({
+require('nvim-tree').setup({
     update_focused_file = {
         enable = true,
         update_cwd = true,
     },
     live_filter = {
-        prefix = "[FILTER]: ",
+        prefix = '[FILTER]: ',
         always_show_folders = false, -- Turn into false from true by default
     },
     renderer = {
-        root_folder_modifier = ":t",
+        root_folder_modifier = ':t',
         icons = {
             glyphs = {
-                default = "",
-                symlink = "",
+                default = '',
+                symlink = '',
                 folder = {
-                    arrow_open = "",
-                    arrow_closed = "",
-                    default = "",
-                    open = "",
-                    empty = "",
-                    empty_open = "",
-                    symlink = "",
-                    symlink_open = "",
+                    arrow_open = '',
+                    arrow_closed = '',
+                    default = '',
+                    open = '',
+                    empty = '',
+                    empty_open = '',
+                    symlink = '',
+                    symlink_open = '',
                 },
                 git = {
-                    unstaged = "",
-                    staged = "S",
-                    unmerged = "",
-                    renamed = "➜",
-                    untracked = "U",
-                    deleted = "",
-                    ignored = "◌",
+                    unstaged = '',
+                    staged = 'S',
+                    unmerged = '',
+                    renamed = '➜',
+                    untracked = 'U',
+                    deleted = '',
+                    ignored = '◌',
                 },
             },
         },
@@ -47,10 +47,10 @@ require("nvim-tree").setup({
         enable = true,
         show_on_dirs = true,
         icons = {
-            hint = "",
-            info = "",
-            warning = "",
-            error = "",
+            hint = '',
+            info = '',
+            warning = '',
+            error = '',
         },
     },
     view = {
@@ -80,4 +80,4 @@ require("nvim-tree").setup({
     },
 })
 
-vim.keymap.set('n', '<Leader>fe', '<Cmd>NvimTreeFindFileToggle<CR>')
+vim.keymap.set('n', '<Leader>fe', '<Cmd>NvimTreeFindFileToggle<CR>', { desc = '[F]ile [E]xplorer toggle' })
