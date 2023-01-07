@@ -1,24 +1,20 @@
 require('telescope').setup {
     defaults = {
+        layout_strategy = 'horizontal',
+        layout_config = {
+            height = 0.8,
+            width = 0.9,
+            preview_width = 0.6,
+        },
+        preview = {
+            hide_on_startup = true,
+        },
         mappings = {
             i = {
                 ['<esc>'] = require('telescope.actions').close,
+                ['<C-y>'] = require('telescope.actions.layout').toggle_preview,
             },
         },
-    },
-    pickers = {
-        find_files = {
-            theme = 'dropdown',
-            previewer = false,
-            width = 2,
-        },
-        buffers = {
-            theme = 'dropdown',
-            previewer = false,
-            width = 2,
-        },
-    },
-    extensions = {
     },
 }
 
