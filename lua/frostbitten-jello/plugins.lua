@@ -13,10 +13,10 @@ local packer_bootstrap = ensure_packer()
 
 -- Auto-sync packer on writing to the file
 vim.cmd([[
-  augroup packer_user_config
+    augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
+    augroup end
 ]])
 
 return require('packer').startup({function(use)
@@ -85,6 +85,10 @@ return require('packer').startup({function(use)
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup {} end
     }
+    use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    })
 
     -- Finder, file browser
     use { 'nvim-telescope/telescope.nvim' }
