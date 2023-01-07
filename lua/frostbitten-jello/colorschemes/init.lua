@@ -1,1 +1,1 @@
-require "frostbitten-jello/colorschemes/kanagawa"
+require "frostbitten-jello/colorschemes/rose-pine"

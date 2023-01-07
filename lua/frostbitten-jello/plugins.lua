@@ -53,8 +53,6 @@ return require('packer').startup({function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
     }
-    use 'rebelot/kanagawa.nvim'
-
 
     -- LSP,completion plugins
     use 'numToStr/Comment.nvim'
