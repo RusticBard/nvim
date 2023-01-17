@@ -37,6 +37,7 @@ return require('packer').startup({function(use)
         },
         -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
+    use 'folke/which-key.nvim'
 
     -- Eyecandy
     use {
@@ -53,6 +54,8 @@ return require('packer').startup({function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
     }
+    use { 'catppuccin/nvim', as = 'catppuccin' }
+    use { 'ellisonleao/gruvbox.nvim' }
 
     -- LSP,completion plugins
     use 'numToStr/Comment.nvim'

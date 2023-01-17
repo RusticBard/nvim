@@ -3,7 +3,7 @@ require('telescope').setup {
         preview = false,
         layout_config = {
             height = 0.7,
-            width = 0.7,
+            width = 0.8,
         },
         mappings = {
             i = {
