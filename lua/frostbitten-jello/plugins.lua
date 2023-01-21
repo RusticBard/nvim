@@ -56,6 +56,7 @@ return require('packer').startup({function(use)
     }
     use { 'catppuccin/nvim', as = 'catppuccin' }
     use { 'ellisonleao/gruvbox.nvim' }
+    use 'JoosepAlviste/palenightfall.nvim'
 
     -- LSP,completion plugins
     use 'numToStr/Comment.nvim'
@@ -95,6 +96,7 @@ return require('packer').startup({function(use)
     use { 'nvim-telescope/telescope.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
+    -- Note taking
 
     if packer_bootstrap then
         require('packer').sync()
