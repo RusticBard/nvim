@@ -3,6 +3,7 @@ vim.opt.guicursor = ''
 vim.opt.mouse = ''
 vim.opt.mousescroll = 'ver:0,hor:0'
 vim.opt.showmode = false
+vim.opt.conceallevel = 2
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

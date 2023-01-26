@@ -3,7 +3,7 @@ require('nvim-treesitter.configs').setup {
     ensure_installed = 'all',
 
     highlight = { enable = true },
-    indent = { enable = true, disable = { 'python' } },
+    indent = { enable = true, disable = { 'python',  } },
     incremental_selection = {
         enable = true,
         keymaps = {

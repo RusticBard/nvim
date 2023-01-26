@@ -38,6 +38,10 @@ return require('packer').startup({function(use)
         -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
     use 'folke/which-key.nvim'
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = '*',
+    }
 
     -- Eyecandy
     use {
@@ -95,8 +99,11 @@ return require('packer').startup({function(use)
     -- Finder, file browser
     use { 'nvim-telescope/telescope.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+    use 'nvim-telescope/telescope-media-files.nvim'
 
     -- Note taking
+    use 'renerocksai/telekasten.nvim'
+    use 'renerocksai/calendar-vim'
 
     if packer_bootstrap then
         require('packer').sync()
