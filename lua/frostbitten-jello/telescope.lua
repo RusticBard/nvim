@@ -1,6 +1,6 @@
 require('telescope').setup {
-    defaults = require('telescope.themes').get_dropdown {
-        preview = false,
+    defaults = require('telescope.themes').get_ivy{
+        preview = true,
         layout_config = {
             height = 0.7,
             width = 0.8,
