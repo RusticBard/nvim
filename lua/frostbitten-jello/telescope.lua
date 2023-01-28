@@ -1,9 +1,11 @@
 require('telescope').setup {
     defaults = require('telescope.themes').get_ivy{
+    --defaults = {
         preview = true,
         layout_config = {
-            height = 0.7,
-            width = 0.8,
+            height = 0.99,
+            width = 0.97,
+            preview_width = 0.6, 
         },
         mappings = {
             i = {
@@ -36,8 +38,8 @@ end, { desc = '[/] Fuzzily search in current buffer]' })
 
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+-- vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sc', '<cmd>Telescope find_files cwd=~/.config<CR>' , { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sb', '<cmd>Telescope find_files cwd=~/Documents/Notes/Second-brain<CR>' , { desc = '[S]econd [B]rain' })
