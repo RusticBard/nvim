@@ -1,24 +1,24 @@
 require('telescope').setup {
-    defaults = require('telescope.themes').get_ivy{
-    --defaults = {
-        preview = true,
+    defaults = require('telescope.builtin').get_ivy{
         layout_config = {
-            height = 0.99,
-            width = 0.97,
-            preview_width = 0.6, 
+            horizontal = {
+                height = 0.8,
+                width = 0.94,
+                preview_width = 0.6,
+            },
         },
         mappings = {
             i = {
                 ['<esc>'] = require('telescope.actions').close,
             },
         },
-        extensions = {
-            media_files = {
-                -- filetypes whitelist
-                -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-                filetypes = {"png", "webp", "jpg", "jpeg"}, find_cmd = "rg" -- find command (defaults to `fd`)
-            }
-        },
+    },
+    extensions = {
+        media_files = {
+            -- filetypes whitelist
+            -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+            filetypes = {"png", "webp", "jpg", "jpeg"}, find_cmd = "rg" -- find command (defaults to `fd`)
+        }
     },
 }
 
@@ -39,7 +39,7 @@ end, { desc = '[/] Fuzzily search in current buffer]' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
--- vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sc', '<cmd>Telescope find_files cwd=~/.config<CR>' , { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sb', '<cmd>Telescope find_files cwd=~/Documents/Notes/Second-brain<CR>' , { desc = '[S]econd [B]rain' })

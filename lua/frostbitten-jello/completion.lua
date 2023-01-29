@@ -51,7 +51,14 @@ local servers = {
     -- pyright = {},
     -- tsserver = {},
 
-    rust_analyzer = {},
+    rust_analyzer = {
+        cmd = {
+            'rustup',
+            'run',
+            'stable',
+            'rust-analyzer',
+        }
+    },
     sumneko_lua = {
         Lua = {
             workspace = { checkThirdParty = false },
