@@ -1,5 +1,5 @@
 require('telescope').setup {
-    defaults = require('telescope.builtin').get_ivy{
+    defaults = {
         layout_config = {
             horizontal = {
                 height = 0.8,
@@ -21,6 +21,20 @@ require('telescope').setup {
         }
     },
 }
+
+local no_preview = function()
+  return require('telescope.themes').get_dropdown({
+    borderchars = {
+      { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+      prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+      results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+      preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+    },
+    width = 0.8,
+    previewer = false,
+    prompt_title = false
+  })
+end
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')

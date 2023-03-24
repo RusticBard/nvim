@@ -58,6 +58,10 @@ return require('packer').startup({function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
     }
+    use {
+        "catppuccin/nvim",
+        as = "catppuccin"
+    }
 
     -- LSP,completion plugins
     use 'numToStr/Comment.nvim'
