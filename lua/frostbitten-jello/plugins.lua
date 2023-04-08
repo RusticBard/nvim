@@ -25,6 +25,22 @@ return require('packer').startup({function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
 
+    -- Eyecandy
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            pcall(require('nvim-treesitter.install').update { with_sync = true })
+        end,
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        after = 'nvim-treesitter',
+    }
+    use {
+        "catppuccin/nvim",
+        as = "catppuccin"
+    }
+
     -- UI plugins
     use 'j-hui/fidget.nvim'
     use 'lewis6991/gitsigns.nvim'
@@ -42,27 +58,6 @@ return require('packer').startup({function(use)
         "akinsho/toggleterm.nvim",
         tag = '*',
     }
-
-    -- Eyecandy
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            pcall(require('nvim-treesitter.install').update { with_sync = true })
-        end,
-    }
-    use {
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        after = 'nvim-treesitter',
-    }
-    use {
-        'rose-pine/neovim',
-        as = 'rose-pine',
-    }
-    use {
-        "catppuccin/nvim",
-        as = "catppuccin"
-    }
-    use { "ellisonleao/gruvbox.nvim" }
 
     -- LSP,completion plugins
     use 'numToStr/Comment.nvim'
@@ -105,8 +100,6 @@ return require('packer').startup({function(use)
     use 'nvim-telescope/telescope-media-files.nvim'
 
     -- Note taking
-    use 'renerocksai/telekasten.nvim'
-    use 'renerocksai/calendar-vim'
 
     if packer_bootstrap then
         require('packer').sync()

@@ -1,1 +1,1 @@
-require "frostbitten-jello/colorschemes/rosepine"
+require "frostbitten-jello/colorschemes/catppuccin"
