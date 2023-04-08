@@ -62,6 +62,7 @@ return require('packer').startup({function(use)
         "catppuccin/nvim",
         as = "catppuccin"
     }
+    use { "ellisonleao/gruvbox.nvim" }
 
     -- LSP,completion plugins
     use 'numToStr/Comment.nvim'
@@ -76,7 +77,8 @@ return require('packer').startup({function(use)
             'folke/neodev.nvim',
         },
     }
-    use { -- Autocompletion
+    -- Autocompletion
+    use {
         'hrsh7th/nvim-cmp',
         requires = {
             'hrsh7th/cmp-nvim-lsp',

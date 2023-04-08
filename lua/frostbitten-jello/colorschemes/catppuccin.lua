@@ -1,12 +1,12 @@
 require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    flavour = "macchiato", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
         dark = "mocha",
     },
     transparent_background = true,
     show_end_of_buffer = false, -- show the '~' characters after the end of buffers
-    term_colors = false,
+    term_colors = true,
     dim_inactive = {
         enabled = false,
         shade = "dark",
@@ -28,7 +28,10 @@ require("catppuccin").setup({
         types = {},
         operators = {},
     },
-    color_overrides = {},
+    color_overrides = {
+        all = {
+        },
+    },
     custom_highlights = {},
     integrations = {
         cmp = true,
