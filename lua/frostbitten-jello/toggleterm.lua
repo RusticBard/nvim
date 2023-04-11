@@ -3,7 +3,7 @@ require("toggleterm").setup{
     -- persist_size = true,
     open_mapping = [[<c-\>]],
     size = 15,
-    direction = 'horizontal', -- 'vertical' | 'horizontal' | 'tab' | 'float'
+    direction = 'float', -- 'vertical' | 'horizontal' | 'tab' | 'float'
     auto_scroll = true,
     shell = vim.o.shell, -- change the default shell
     close_on_exit = true, -- close the terminal window when the process exits
@@ -16,7 +16,7 @@ require("toggleterm").setup{
         border = 'curved',  --'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
         -- like `size`, width and height can be a number or function which is passed the current terminal
     },
-    winblend = 3,
+    winblend = 50,
 }
 
 function _G.set_terminal_keymaps()
