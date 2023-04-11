@@ -72,6 +72,7 @@ return require('packer').startup({function(use)
             'folke/neodev.nvim',
         },
     }
+
     -- Autocompletion
     use {
         'hrsh7th/nvim-cmp',
