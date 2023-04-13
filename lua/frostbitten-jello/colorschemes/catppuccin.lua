@@ -33,6 +33,7 @@ require("catppuccin").setup({
         all = {
             base = "#1E1E1E",
             mantle = "#1E1E1E",
+            crust = '#45475A'
         },
     },
     custom_highlights = {},
