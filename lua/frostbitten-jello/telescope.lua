@@ -22,21 +22,6 @@ require('telescope').setup {
     },
 }
 
-local no_preview = function()
-  return require('telescope.themes').get_dropdown({
-    borderchars = {
-      { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-      prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
-      results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
-      preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-    },
-    width = 0.8,
-    previewer = false,
-    prompt_title = false
-  })
-end
-
--- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'media_files')
 
