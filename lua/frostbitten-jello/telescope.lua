@@ -4,7 +4,7 @@ require('telescope').setup {
             horizontal = {
                 height = 0.99,
                 width = 0.99,
-                preview_width = 0.6,
+                preview_width = 0.55,
             },
         },
         mappings = {

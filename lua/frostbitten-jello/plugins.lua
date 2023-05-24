@@ -40,6 +40,9 @@ return require('packer').startup({function(use)
         "catppuccin/nvim",
         as = "catppuccin"
     }
+    use "rebelot/kanagawa.nvim"
+    use "navarasu/onedark.nvim"
+
 
     -- UI plugins
     use 'j-hui/fidget.nvim'
