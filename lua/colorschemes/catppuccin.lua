@@ -1,5 +1,5 @@
 return {
-    "catppuccin/nvim", 
+    "catppuccin/nvim",
     name = "catppuccin",
 
     lazy = false,
@@ -55,7 +55,5 @@ return {
                 -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
             },
     })
-
-    vim.cmd.colorscheme "catppuccin"
 end,
 }

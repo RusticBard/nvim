@@ -25,7 +25,7 @@ vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc =
 vim.keymap.set('n', 'Q', '<nop>', { desc = 'Disable Q command'})
 
 -- Clear highlights
--- vim.keymap.set({ 'n', 'i' }, '<Esc><Esc>', ':nohl<CR>', { desc = 'Remove highlights'})
+vim.keymap.set({ 'n', 'i' }, '<Esc><Esc>', '<CMD>nohl<CR>', { desc = 'Remove highlights'})
 
 -- Commandline mode movement
 vim.keymap.set('c', '<C-F>', '<Right>', { desc = 'move [F]orward' })

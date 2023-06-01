@@ -1,3 +1,4 @@
+local theme = "catppuccin"
 vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -16,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require "core.options"
 require "core.keymaps"
 
-opts = {
+local opts = {
   defaults = {
     lazy = false, -- should plugins be lazy-loaded?
   },
@@ -25,8 +26,7 @@ opts = {
     missing = true,
     -- try to load one of these colorschemes when starting an installation during startup
     colorscheme = {
-            "catppuccin",
-            "habamax",
+            theme,
         },
   },
   ui = {
@@ -60,3 +60,5 @@ opts = {
 }
 
 require("lazy").setup({{import = "plugins"}, {import = "colorschemes"}}, opts)
+
+vim.cmd('colorscheme '..theme)
