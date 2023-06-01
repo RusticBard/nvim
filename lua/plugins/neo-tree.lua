@@ -20,7 +20,7 @@ return {
         -- NOTE: this is changed from v1.x, which used the old style of highlight groups
         -- in the form "LspDiagnosticsSignWarning"
         require("neo-tree").setup({
-            close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+            close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
             popup_border_style = "rounded",
             enable_git_status = true,
             enable_diagnostics = true,
@@ -92,14 +92,14 @@ return {
             commands = {},
             window = {
                 position = "left",
-                width = 40,
+                width = 35,
                 mapping_options = {
                     noremap = true,
                     nowait = true,
                 },
                 mappings = {
-                    ["<space>"] = { 
-                        "toggle_node", 
+                    ["<space>"] = {
+                        "toggle_node",
                         nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
                     },
                     ["<2-LeftMouse>"] = "open",
@@ -120,7 +120,7 @@ return {
                     -- ['C'] = 'close_all_subnodes',
                     ["z"] = "close_all_nodes",
                     --["Z"] = "expand_all_nodes",
-                    ["a"] = { 
+                    ["a"] = {
                         "add",
                         -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
                         -- some commands may take optional config options, see `:h neo-tree-mappings` for details
@@ -239,8 +239,8 @@ return {
                 winbar = true,
                 stausline = true,
                 sources = {
-                    { source = "filesystem", display_name = " 󰉓 Files " },
-                    { source = "buffers", display_name = " 󰈚 Buffers "},
+                    { source = "filesystem", display_name = " 󰉓 File " },
+                    { source = "buffers", display_name = " 󰈚 Buffer "},
                     { source = "git_status", display_name = " 󰊢 Git " },
                 },
             },
@@ -248,5 +248,6 @@ return {
 
         vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
         vim.keymap.set('n', '<leader>fe', '<CMD>NeoTreeRevealToggle<CR>', { desc = "[f]ile [e]xplorer" })
+        vim.keymap.set('n', '<leader>fs', '<CMD>NeoTreeShow<CR>', { desc = "[f]iles [s]how" })
     end
 }
