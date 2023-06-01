@@ -172,7 +172,7 @@ return {
             },
             experimental = {
                 native_menu = false,
-                ghost_text = true,
+                ghost_text = { hl_group = "NonText" },
             },
         }
 
