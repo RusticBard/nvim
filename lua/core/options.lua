@@ -38,6 +38,7 @@ vim.opt.laststatus = 3
 vim.api.nvim_create_autocmd('BufWinEnter', {
     pattern = '*',
     callback = function(event)
-      if vim.bo[event.buf].filetype == 'help' then vim.cmd.only() vim.bo.buflisted=true end
+        if vim.bo[event.buf].filetype == 'help' then vim.cmd.only() vim.bo.buflisted=true end
     end,
-  })
+})
+

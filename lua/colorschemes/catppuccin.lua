@@ -24,7 +24,7 @@ return {
             no_bold = false, -- Force no bold
             styles = {
                 comments = { "italic" },
-                conditionals = { "italic" },
+                conditionals = {},
                 loops = {},
                 functions = {},
                 keywords = {},
@@ -40,7 +40,7 @@ return {
                 all = {
                     base = "#1E1E1E",
                     mantle = "#1E1E1E",
-                    crust = '#45475A'
+                    crust = '#45475A',
                 },
             },
             custom_highlights = {},
@@ -54,6 +54,6 @@ return {
                 fidget = true,
                 -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
             },
-    })
-end,
+        })
+    end,
 }
