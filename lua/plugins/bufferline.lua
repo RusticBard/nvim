@@ -13,12 +13,13 @@ return {
                     {
                         filetype = "neo-tree",
                         text = "Files",
-                        separator = false,
-                    },
-                    separator_style = "thick",
-                    style_preset = {
+                        separator = true,
                     },
                 },
+                indicator = {
+                    style = "none",
+                },
+                separator_style = { "|", "|" },
                 diagnostics = "nvim_lsp",
             },
         }
