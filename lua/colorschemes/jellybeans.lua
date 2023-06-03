@@ -1,4 +1,4 @@
 return {
-    "kabouzeid/nvim-jellybeans",
-    dependencies = "rktjmp/lush.nvim",
+  "kabouzeid/nvim-jellybeans",
+  dependencies = "rktjmp/lush.nvim",
 }

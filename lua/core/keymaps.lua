@@ -20,7 +20,7 @@ vim.keymap.set('x', '<leader>p', [["_dP]], { desc = '[P]reserve text in buffer d
 
 -- Replace all instances of given word
 vim.keymap.set('n', '<leader>sr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = '[S]earch and [R]eplace' })
+  { desc = '[S]earch and [R]eplace' })
 
 -- Make the file excutable
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make e[x]ecutable' })
