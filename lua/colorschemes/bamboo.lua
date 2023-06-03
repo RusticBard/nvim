@@ -33,6 +33,7 @@ return {
       highlights = {
         NormalFloat = { bg = "#121212" },
         FloatBorder = { bg = "#121212" },
+        ['@comment'] = { fg = '$grey' },
       },       -- Override highlight groups
 
       -- Plugins Config --
@@ -42,6 +43,5 @@ return {
         background = true,         -- use background color for virtual text
       },
     }
-    require('bamboo').load()
   end,
 }

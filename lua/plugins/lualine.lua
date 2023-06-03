@@ -9,13 +9,13 @@ return {
         icons_enabled = false,
         theme = 'auto',
         component_separators = '',
-        section_separators = { left = '', right = '' }, --
+        section_separators = { left = '', right = '' }, --
       },
       sections = {
         lualine_a = {
           {
             'mode',
-            separator = { left = '' },
+            separator = { left = '' },
             right_padding = 1,
           },
         },
@@ -24,7 +24,7 @@ return {
         lualine_x = { 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = {
-          { 'location', separator = { right = '' }, left_padding = 2 },
+          { 'location', separator = { right = '' }, left_padding = 2 },
         },
       },
       inactive_sections = {
