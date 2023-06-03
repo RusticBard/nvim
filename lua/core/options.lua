@@ -33,12 +33,16 @@ vim.opt.updatetime = 50
 vim.opt.timeoutlen = 50
 
 vim.opt.laststatus = 3
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Open help in a new buffer instead of a vsplit
 vim.api.nvim_create_autocmd('BufWinEnter', {
     pattern = '*',
     callback = function(event)
-        if vim.bo[event.buf].filetype == 'help' then vim.cmd.only() vim.bo.buflisted=true end
+        if vim.bo[event.buf].filetype == 'help' then
+            vim.cmd.only()
+            vim.bo.buflisted = true
+        end
     end,
 })
-

@@ -91,7 +91,7 @@ return {
             -- see `:h neo-tree-global-custom-commands`
             commands = {},
             window = {
-                position = "right",
+                position = "left",
                 width = 35,
                 mapping_options = {
                     noremap = true,
@@ -197,9 +197,6 @@ return {
                         ["<c-x>"] = "clear_filter",
                         ["[g"] = "prev_git_modified",
                         ["]g"] = "next_git_modified",
-                        ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
-                        ['b'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
-                        ['g'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
                     },
                     fuzzy_finder_mappings = { -- define keymaps for filter popup window in fuzzy_finder_mode
                         ["<down>"] = "move_cursor_down",
@@ -243,8 +240,8 @@ return {
                 stausline = true,
                 sources = {
                     { source = "filesystem", display_name = " 󰉓 File " },
-                    { source = "buffers", display_name = " 󰈚 Buffer "},
-                    { source = "git_status", display_name = " 󰊢 Git " },
+                    -- { source = "buffers", display_name = " 󰈚 Buffer "},
+                    -- { source = "git_status", display_name = " 󰊢 Git " },
                 },
             },
             event_handlers = {

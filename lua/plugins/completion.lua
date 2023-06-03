@@ -51,15 +51,21 @@ return {
             -- Lesser used LSP functionality
             vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[G]oto [D]eclaration' })
             vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = '[W]orkspace [A]dd Folder' })
-            vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = '[W]orkspace [R]emove Folder' })
+            vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder,
+                { desc = '[W]orkspace [R]emove Folder' })
 
 
-            vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { desc = '[W]orkspace [R]emove Folder' })
+            vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
+                { desc = '[W]orkspace [R]emove Folder' })
 
             -- Create a command `:Format` local to the LSP buffer
             vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
                 vim.lsp.buf.format()
             end, { desc = 'Format current buffer with LSP' })
+
+            if _.server_capabilities["documentSymbolProvider"] then
+                require("nvim-navic").attach(_, bufnr)
+            end
         end
 
         -- Enable the following language servers
@@ -165,7 +171,7 @@ return {
                 { name = 'nvim_lua' },
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
-                { name = 'buffer', keyword_length = 5 },
+                { name = 'buffer',  keyword_length = 5 },
                 { name = 'path' }
             },
             formatting = {
@@ -190,13 +196,13 @@ return {
             sources = cmp.config.sources({
                 { name = 'path' }
             }, {
-                    {
-                        name = 'cmdline',
-                        option = {
-                            ignore_cmds = { 'Man', '!' }
-                        }
+                {
+                    name = 'cmdline',
+                    option = {
+                        ignore_cmds = { 'Man', '!' }
                     }
-                })
+                }
+            })
         })
     end,
 }
