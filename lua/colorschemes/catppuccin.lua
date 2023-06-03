@@ -13,7 +13,8 @@ return {
         dark = "mocha",
       },
       transparent_background = true,
-      show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+      -- show the '~' characters after the end of buffers
+      show_end_of_buffer = false,
       term_colors = true,
       floating_border = "on",     -- "auto" | "on" | "off"
       dim_inactive = {
@@ -53,7 +54,8 @@ return {
         notify = false,
         mini = false,
         fidget = true,
-        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+        -- For more plugins integrations please scroll down 
+        -- (https://github.com/catppuccin/nvim#integrations)
       },
     })
   end,
