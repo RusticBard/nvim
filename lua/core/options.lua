@@ -36,6 +36,11 @@ vim.opt.laststatus = 3
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+vim.opt.shadafile = "NONE"
+vim.opt.shadafile = ""
+
+vim.opt.lazyredraw = true
+
 -- Open help in a new buffer instead of a vsplit
 vim.api.nvim_create_autocmd('BufWinEnter', {
   pattern = '*',
@@ -46,3 +51,29 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
     end
   end,
 })
+
+-- Disabling build in plugins
+local disabled_built_ins = {
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "gzip",
+    "zip",
+    "zipPlugin",
+    "tar",
+    "tarPlugin",
+    "getscript",
+    "getscriptPlugin",
+    "vimball",
+    "vimballPlugin",
+    "2html_plugin",
+    "logipat",
+    "rrhelper",
+    "spellfile_plugin",
+    "matchit"
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+    vim.g["loaded_" .. plugin] = 1
+end
