@@ -17,7 +17,7 @@ return {
       code_style = {
         comments = 'italic',
         keywords = 'none',
-        functions = 'none',
+        functions = 'bold',
         strings = 'none',
         variables = 'none'
       },
