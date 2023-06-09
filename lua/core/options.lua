@@ -39,30 +39,3 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.opt.lazyredraw = true
-
--- Open help in a new buffer instead of a vsplit
-vim.api.nvim_create_autocmd('BufWinEnter', {
-  pattern = '*',
-  callback = function(event)
-    if vim.bo[event.buf].filetype == 'help' then
-      vim.cmd.only()
-      vim.bo.buflisted = true
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd('CmdlineEnter', {
-  pattern = '*',
-  callback = function()
-    require('lualine').hide({})
-    vim.cmd('highlight MsgArea guibg=#1c1c1c gui=bold guisp=NONE')
-  end,
-})
-
-vim.api.nvim_create_autocmd({'CmdlineLeave', 'BufWinEnter'}, {
-  pattern = '*',
-  callback = function()
-    require('lualine').hide({ unhide = true })
-    vim.cmd('highlight MsgArea guibg=#1c1c1c gui=bold guisp=NONE')
-  end,
-})
