@@ -47,3 +47,6 @@ vim.keymap.set('n', '<TAB>', '<cmd>bnext<CR>', { desc = '[b]uffer [n]ext' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[b]uffer [d]elete' })
 
 vim.keymap.set('n', '<leader>af', '<CMD>Format<CR>', { desc = '[a]djust [f]ormatting' })
+
+vim.keymap.set('n', '<leader>yc', '<CMD>let @+=@\"<CR>', { desc = '[y]ank to [c]lipboard' })
+vim.keymap.set('n', '<leader>cy', '<CMD>let @\"=@+<CR>', { desc = '[c]lipboard to [c]ank' })
