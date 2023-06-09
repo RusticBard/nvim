@@ -106,7 +106,7 @@ return {
     require('mason').setup({
       ui = {
         border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        width = 0.8,
+        width = 0.85,
         height = 0.8,
       },
     })
