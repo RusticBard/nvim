@@ -24,11 +24,3 @@ vim.api.nvim_create_autocmd('CmdlineLeave', {
     require('lualine').hide({ unhide = true })
   end,
 })
-
--- Change color of the cmdline
--- vim.api.nvim_create_autocmd({'ColorScheme'}, {
---   pattern = '*',
---   callback = function()
---     vim.cmd('highlight MsgArea guibg=#1c1c1c gui=bold guisp=NONE')
---   end,
--- })
