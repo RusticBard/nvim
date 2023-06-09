@@ -4,6 +4,7 @@ vim.opt.mouse = ''
 vim.opt.mousescroll = 'ver:0,hor:0'
 vim.opt.showmode = false
 vim.o.conceallevel = 2
+vim.opt.cmdheight = 0
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -26,7 +27,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 999
 vim.opt.signcolumn = 'yes'
 vim.opt.isfname:append('@-@')
 
@@ -36,9 +37,6 @@ vim.opt.timeoutlen = 50
 vim.opt.laststatus = 3
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-
-vim.opt.shadafile = "NONE"
-vim.opt.shadafile = ""
 
 vim.opt.lazyredraw = true
 
@@ -53,24 +51,18 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   end,
 })
 
--- Disabling build in plugins
-local disabled_built_ins = {
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "gzip",
-  "zip",
-  "zipPlugin",
-  "tar",
-  "tarPlugin",
-  "getscript",
-  "getscriptPlugin",
-  "vimball",
-  "vimballPlugin",
-  "2html_plugin",
-  "logipat",
-  "rrhelper",
-  "spellfile_plugin",
-  "matchit"
-}
+vim.api.nvim_create_autocmd('CmdlineEnter', {
+  pattern = '*',
+  callback = function()
+    require('lualine').hide({})
+    vim.cmd('highlight MsgArea guibg=#1c1c1c gui=bold guisp=NONE')
+  end,
+})
+
+vim.api.nvim_create_autocmd({'CmdlineLeave', 'BufWinEnter'}, {
+  pattern = '*',
+  callback = function()
+    require('lualine').hide({ unhide = true })
+    vim.cmd('highlight MsgArea guibg=#1c1c1c gui=bold guisp=NONE')
+  end,
+})

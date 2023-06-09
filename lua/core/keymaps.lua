@@ -35,8 +35,15 @@ vim.keymap.set({ 'n', 'i' }, '<Esc><Esc>', '<CMD>nohl<CR>', { desc = 'Remove hig
 vim.keymap.set('c', '<C-F>', '<Right>', { desc = 'move [F]orward' })
 vim.keymap.set('c', '<C-B>', '<Left>', { desc = 'move [B]ackward' })
 
--- Buffer navigation
-vim.keymap.set('n', '<S-TAB>', '<cmd>bprevious<CR>', { desc = '[B]uffer [P]revious' })
-vim.keymap.set('n', '<TAB>', '<cmd>bnext<CR>', { desc = '[B]uffer [N]ext' })
+-- Window navigation
+vim.keymap.set("n", "<A-h>", "<C-w>h")
+vim.keymap.set("n", "<A-j>", "<C-w>j")
+vim.keymap.set("n", "<A-k>", "<C-w>k")
+vim.keymap.set("n", "<A-l>", "<C-w>l")
 
-vim.keymap.set('n', '<leader>af', '<CMD>Format<CR>', { desc = '[a]djust [t]abs' })
+-- Buffer navigation
+vim.keymap.set('n', '<S-TAB>', '<cmd>bprevious<CR>', { desc = '[b]uffer [p]revious' })
+vim.keymap.set('n', '<TAB>', '<cmd>bnext<CR>', { desc = '[b]uffer [n]ext' })
+vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[b]uffer [d]elete' })
+
+vim.keymap.set('n', '<leader>af', '<CMD>Format<CR>', { desc = '[a]djust [f]ormatting' })

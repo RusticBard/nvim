@@ -1,4 +1,4 @@
-local theme = "bamboo"
+local theme = "jellybeans"
 vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
