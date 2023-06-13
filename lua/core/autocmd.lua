@@ -24,3 +24,10 @@ vim.api.nvim_create_autocmd('CmdlineLeave', {
     require('lualine').hide({ unhide = true })
   end,
 })
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '*_repl',
+  callback = function()
+    vim.o.filetype = 'cpp'
+  end,
+})
