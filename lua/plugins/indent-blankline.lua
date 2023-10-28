@@ -20,13 +20,13 @@ return {
       -- show_current_context_start = false,
       indent = {
         highlight = highlight,
-        char = "┆" -- ¦┊┆ ⎸▏
+        char = "▎"
       },
       scope = {
         enabled = true,
-        show_start = true,
+        show_start = false,
         show_end = false,
-        injected_languages = false,
+        injected_languages = true,
         highlight = { "Function", "Label" },
         priority = 500,
       },
