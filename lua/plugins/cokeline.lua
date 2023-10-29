@@ -14,7 +14,7 @@ return {
           return
               buffer.is_focused
               and get_hex('Normal', 'fg')
-              or get_hex('Comment', 'fg')
+              or get_hex('ColorColumn', 'fg')
         end,
         bg = function(buffer)
           return

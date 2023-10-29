@@ -6,15 +6,20 @@ return {
   config = function()
     require("neorg").setup {
       load = {
-        ["core.defaults"] = {},    -- Loads default behaviour
-        ["core.concealer"] = {},   -- Adds pretty icons to your documents
-        ["core.dirman"] = {        -- Manages Neorg workspaces
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.concealer"] = {
+          config = {
+            icon_preset = "diamond",
+            folds = false,
+          }
+        },                  -- Adds pretty icons to your documents
+        ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
-              notes = "~/Documents/Notes",
-              sociology = "~/Documents/Notes/Sociology",
+              Notes = "~/Documents/Notes",
+              Sociology = "~/Documents/Notes/Sociology",
             },
-            default_workspace = "notes"
+            default_workspace = "Notes"
           },
         },
       },

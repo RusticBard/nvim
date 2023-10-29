@@ -48,7 +48,8 @@ return {
     vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
     vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
     vim.keymap.set('n', '<leader>sc', '<cmd>Telescope find_files cwd=~/.config<CR>', { desc = '[S]earch [F]iles' })
-    vim.keymap.set('n', '<leader>sb', '<cmd>Telescope find_files cwd=~/Documents/Notes/Second-brain<CR>',
-      { desc = '[S]econd [B]rain' })
+    vim.keymap.set('n', '<leader>sn', '<cmd>Telescope find_files cwd=~/Documents/Notes<CR>',{ desc = '[S]econd [N]otes' })
+    vim.keymap.set('n', '<leader>sw', '<cmd>Telescope find_files cwd=~/Workspace<CR>', { desc = '[S]earch [W]orkspace'})
+
   end
 }

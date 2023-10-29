@@ -177,8 +177,10 @@ return {
       formatting = {
       },
       experimental = {
-        native_menu = false,
         ghost_text = { hl_group = "NonText" },
+      },
+      view = {
+        -- entries = "native",
       },
     }
 
