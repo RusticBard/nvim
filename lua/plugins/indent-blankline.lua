@@ -20,7 +20,7 @@ return {
       -- show_current_context_start = false,
       indent = {
         highlight = highlight,
-        char = "▎"
+        char = "┆"
       },
       scope = {
         enabled = true,
