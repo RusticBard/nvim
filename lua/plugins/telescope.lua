@@ -3,6 +3,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim'
   },
+  lazy = false,
   config = function()
     require('telescope').setup {
       defaults = {
@@ -10,7 +11,7 @@ return {
           horizontal = {
             height = 0.99,
             width = 0.99,
-            preview_width = 0.55,
+            preview_width = 0.57,
           },
         },
         mappings = {

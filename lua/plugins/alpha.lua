@@ -7,12 +7,12 @@ return {
       local dashboard = require("alpha.themes.dashboard")
       local logo = [[
 
-       ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ 
-       ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ 
-       ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ 
-       ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ 
-       ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ 
-       ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ 
+      ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ 
+      ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ 
+      ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ 
+      ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ 
+      ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ 
+      ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ 
 
     ]]
 
@@ -44,10 +44,10 @@ return {
 
       local userName = "Sanket"
       local greeting = getGreeting(userName)
-      dashboard.section.header.val = vim.split(logo .. "\n" .. greeting, "\n")
+      dashboard.section.header.val = vim.split(logo .. "\n" , "\n")
       dashboard.section.buttons.val = {
         dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-        dashboard.button("s", " " .. " Search file", ":Telescope find_files <CR>"),
+        dashboard.button("s", " " .. " Search file", ":Telescope find_files <CR>"),
         -- dashboard.button("g", "󰷾 " .. " Find text", ":Telescope live_grep <CR>"),
         dashboard.button("f", " " .. " File browser", "<cmd>NeoTreeFloat<CR>"),
         dashboard.button("r", "󰄉 " .. " Recent files", ":Telescope oldfiles <CR>"),

@@ -1,23 +1,24 @@
 return {
   'neovim/nvim-lspconfig',
+  lazy = false,
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
+    {'williamboman/mason.nvim', lazy = false},
+    {'williamboman/mason-lspconfig.nvim', lazy = false},
 
     -- Additional lua configuration, makes nvim stuff amazing
-    'folke/neodev.nvim',
+    {'folke/neodev.nvim', lazy = false},
 
     -- Completion
-    'hrsh7th/nvim-cmp',
+    {'hrsh7th/nvim-cmp', lazy = false},
 
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
-    'hrsh7th/cmp-nvim-lua',
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip'
+    {'hrsh7th/cmp-nvim-lsp', lazy = false},
+    {'hrsh7th/cmp-buffer', lazy = false},
+    {'hrsh7th/cmp-path', lazy = false},
+    {'hrsh7th/cmp-cmdline', lazy = false},
+    {'hrsh7th/cmp-nvim-lua', lazy = false},
+    {'L3MON4D3/LuaSnip', lazy = false},
+    {'saadparwaiz1/cmp_luasnip', lazy = false}
   },
   config = function()
     -- LSP settings.
@@ -178,9 +179,6 @@ return {
       },
       experimental = {
         ghost_text = { hl_group = "NonText" },
-      },
-      view = {
-        -- entries = "native",
       },
     }
 

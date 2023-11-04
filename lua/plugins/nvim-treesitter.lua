@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
 
+  lazy = false,
   config = function()
     require('nvim-treesitter.configs').setup {
       -- Add languages to be installed here that you want installed for treesitter
