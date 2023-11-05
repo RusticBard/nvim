@@ -51,7 +51,7 @@ return {
         -- dashboard.button("g", "󰷾 " .. " Find text", ":Telescope live_grep <CR>"),
         dashboard.button("f", " " .. " File browser", "<cmd>NeoTreeFloat<CR>"),
         dashboard.button("r", "󰄉 " .. " Recent files", ":Telescope oldfiles <CR>"),
-        dashboard.button("c", " " .. " Config", "<cmd>Telescope find_files cwd=~/.config<CR>"),
+        dashboard.button("c", " " .. " Config", "<cmd>Telescope find_files cwd=~/.config/nvim<CR>"),
         dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
         dashboard.button("q", " " .. " Quit", ":qa<CR>"),
       }

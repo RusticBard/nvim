@@ -9,9 +9,9 @@ return {
       defaults = {
         layout_config = {
           horizontal = {
-            height = 0.99,
-            width = 0.99,
-            preview_width = 0.57,
+            height = 99999,
+            width = 99999,
+            preview_width = 0.6,
           },
         },
         mappings = {

@@ -1,24 +1,24 @@
 return {
   'neovim/nvim-lspconfig',
-  lazy = false,
+  lazy = true,
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
-    {'williamboman/mason.nvim', lazy = false},
-    {'williamboman/mason-lspconfig.nvim', lazy = false},
+    {'williamboman/mason.nvim', lazy = true},
+    {'williamboman/mason-lspconfig.nvim', lazy = true},
 
     -- Additional lua configuration, makes nvim stuff amazing
-    {'folke/neodev.nvim', lazy = false},
+    {'folke/neodev.nvim', lazy = true},
 
     -- Completion
-    {'hrsh7th/nvim-cmp', lazy = false},
+    {'hrsh7th/nvim-cmp', lazy = true},
 
-    {'hrsh7th/cmp-nvim-lsp', lazy = false},
-    {'hrsh7th/cmp-buffer', lazy = false},
-    {'hrsh7th/cmp-path', lazy = false},
-    {'hrsh7th/cmp-cmdline', lazy = false},
-    {'hrsh7th/cmp-nvim-lua', lazy = false},
-    {'L3MON4D3/LuaSnip', lazy = false},
-    {'saadparwaiz1/cmp_luasnip', lazy = false}
+    {'hrsh7th/cmp-nvim-lsp', lazy = true},
+    {'hrsh7th/cmp-buffer', lazy = true},
+    {'hrsh7th/cmp-path', lazy = true},
+    {'hrsh7th/cmp-cmdline', lazy = true},
+    {'hrsh7th/cmp-nvim-lua', lazy = true},
+    {'L3MON4D3/LuaSnip', lazy = true},
+    {'saadparwaiz1/cmp_luasnip', lazy = true}
   },
   config = function()
     -- LSP settings.
@@ -51,7 +51,7 @@ return {
 
       -- Lesser used LSP functionality
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[G]oto [D]eclaration' })
-      vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = '[W]orkspace [A]dd Folder' })
+      vim.keymap.sfet('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = '[W]orkspace [A]dd Folder' })
       vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder,
         { desc = '[W]orkspace [R]emove Folder' })
 
@@ -151,7 +151,7 @@ return {
           winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
           scrolloff = 0,
           col_offset = 0,
-          side_padding = 1,
+          side_padding = 0,
           scrollbar = true,
         },
         documentation = {

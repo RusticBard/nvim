@@ -50,3 +50,5 @@ vim.keymap.set('n', '<leader>af', '<CMD>Format<CR>', { desc = '[a]djust [f]ormat
 
 vim.keymap.set('n', '<leader>yc', '<CMD>let @+=@\"<CR>', { desc = '[y]ank to [c]lipboard' })
 vim.keymap.set('n', '<leader>cy', '<CMD>let @\"=@+<CR>', { desc = '[c]lipboard to [c]ank' })
+
+
