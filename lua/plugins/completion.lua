@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  lazy = true,
+  lazy = false,
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
     {'williamboman/mason.nvim', lazy = true},
