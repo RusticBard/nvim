@@ -1,6 +1,12 @@
 -- <Space> as leader
 vim.g.mapleader = ' '
 
+-- TIP: Disable arrow keys in normal mode
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+
 -- Move visual mode selection
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move visual mode selection down' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move visual mode selection up' })
@@ -29,7 +35,7 @@ vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc =
 vim.keymap.set('n', 'Q', '<nop>', { desc = 'Disable Q command' })
 
 -- Clear highlights
-vim.keymap.set({ 'n', 'i' }, '<Esc><Esc>', '<CMD>nohl<CR>', { desc = 'Remove highlights' })
+vim.keymap.set({ 'n' }, '<Esc>', '<CMD>nohlsearch<CR>', { desc = 'Remove highlights' })
 
 -- Commandline mode movement
 vim.keymap.set('c', '<C-F>', '<Right>', { desc = 'move [F]orward' })
@@ -51,4 +57,13 @@ vim.keymap.set('n', '<leader>af', '<CMD>Format<CR>', { desc = '[a]djust [f]ormat
 vim.keymap.set('n', '<leader>yc', '<CMD>let @+=@\"<CR>', { desc = '[y]ank to [c]lipboard' })
 vim.keymap.set('n', '<leader>cy', '<CMD>let @\"=@+<CR>', { desc = '[c]lipboard to [c]ank' })
 
-
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
