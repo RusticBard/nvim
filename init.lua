@@ -1,3 +1,5 @@
+-- vim.loader.enable()
+
 local theme = "bamboo"
 vim.g.mapleader = " "
 

@@ -10,7 +10,7 @@ return {
     {'folke/neodev.nvim', lazy = true},
 
     -- Completion
-    {'hrsh7th/nvim-cmp', lazy = true},
+    {'hrsh7th/nvim-cmp', lazy = true, event = "InsertEnter"},
 
     {'hrsh7th/cmp-nvim-lsp', lazy = true},
     {'hrsh7th/cmp-buffer', lazy = true},

@@ -1,5 +1,6 @@
 return {
   'nvim-telescope/telescope.nvim',
+  event = 'BufReadPost',
   dependencies = {
     'nvim-lua/plenary.nvim'
   },

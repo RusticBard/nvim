@@ -1,5 +1,6 @@
 return {
   "FotiadisM/tabset.nvim",
+  event = 'BufReadPost',
   config = function()
     require("tabset").setup({
       defaults = {
