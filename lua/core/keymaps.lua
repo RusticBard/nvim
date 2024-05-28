@@ -67,3 +67,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.keymap.set('n', '<leader>fe', '<CMD>Ex<CR>', { desc = '[f]ile [e]xplorer'})
