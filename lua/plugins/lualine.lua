@@ -1,13 +1,12 @@
 return {
   'nvim-lualine/lualine.nvim',
-  event = 'BufReadPost',
   dependencies = {
     'nvim-tree/nvim-web-devicons', opt = true
   },
   config = function()
     require('lualine').setup {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'auto',
         component_separators = '',
         section_separators = { left = '', right = '' }, --
@@ -20,10 +19,23 @@ return {
             right_padding = 1,
           },
         },
-        lualine_b = { 'filename' },
-        lualine_c = { 'branch' },
-        lualine_x = { 'filetype' },
-        lualine_y = { 'progress' },
+        lualine_b = {
+          'branch',
+        },
+        lualine_c = { {
+          'filename',
+        }
+        },
+        lualine_x = { {
+          'buffers',
+          hide_filename_extension = true,
+          show_modified_status = false,
+          show_filename_only = true,
+          mode = 1,
+
+        }
+        },
+        lualine_y = { 'filetype' },
         lualine_z = {
           { 'location', separator = { right = '' }, left_padding = 2 },
         },

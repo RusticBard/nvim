@@ -176,8 +176,6 @@ return {
         { name = 'buffer',  keyword_length = 5 },
         { name = 'path' }
       },
-      formatting = {
-      },
       experimental = {
         ghost_text = { hl_group = "NonText" },
       },

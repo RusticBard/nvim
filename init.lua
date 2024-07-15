@@ -1,6 +1,6 @@
 -- vim.loader.enable()
 
-local theme = "bamboo"
+local theme = "bamboo" --main, moon, dawn
 vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -66,8 +66,4 @@ require("lazy").setup({ { import = "plugins" }, { import = "colorschemes" } }, o
 
 vim.cmd('colorscheme ' .. theme)
 
-if (theme == 'jellybeans')
-then
-  vim.cmd('highlight MsgArea guibg=#1c1c1c gui=bold guisp=NONE')
-  vim.cmd('highlight WhichKeyFloat guibg=#141414 gui=bold guisp=NONE')
-end
+vim.cmd('highlight MsgArea guibg=#2D312C gui=bold guisp=NONE')

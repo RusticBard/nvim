@@ -1,6 +1,5 @@
 return {
   "FotiadisM/tabset.nvim",
-  event = 'BufReadPost',
   config = function()
     require("tabset").setup({
       defaults = {
@@ -17,6 +16,10 @@ return {
         rust = {
           tabwidth = 4,
           expandtab = true,
+        },
+        make = {
+          tabwidth = 4,
+          expandtab = false,
         }
       }
     })

@@ -57,6 +57,9 @@ vim.keymap.set('n', '<leader>af', '<CMD>Format<CR>', { desc = '[a]djust [f]ormat
 vim.keymap.set('n', '<leader>yc', '<CMD>let @+=@\"<CR>', { desc = '[y]ank to [c]lipboard' })
 vim.keymap.set('n', '<leader>cy', '<CMD>let @\"=@+<CR>', { desc = '[c]lipboard to [c]ank' })
 
+vim.keymap.set('n', '<leader>sk', '<CMD>Telescope keymaps<CR>', { desc = '[s]Show [k]eymaps' })
+vim.keymap.set('n', '<leader>sl', '<CMD>Lazy<CR>', { desc = '[s]how [l]azy' })
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -68,4 +71,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.keymap.set('n', '<leader>fe', '<CMD>Ex<CR>', { desc = '[f]ile [e]xplorer'})
+vim.keymap.set('n', '<leader>rf', function()
+  local current_buf_wd = vim.fn.expand("%:p:h")
+
+  vim.cmd('terminal ' .. current_buf_wd .. '/run.sh')
+end)
+
+
+vim.keymap.set('n', '<leader>fe', function ()
+  if vim.bo.filetype == 'netrw' then
+    vim.api.nvim_command('Rex')
+    if vim.bo.filetype == 'netrw' then
+      vim.api.nvim_command('bdel')
+    end
+  else
+    vim.api.nvim_command('Ex')
+  end
+end
+  , { desc = '[f]ile [e]xplorer' })

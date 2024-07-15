@@ -33,10 +33,19 @@ vim.opt.signcolumn = 'yes'
 vim.opt.isfname:append('@-@')
 
 vim.opt.updatetime = 50
-vim.opt.timeoutlen = 50
+vim.opt.timeoutlen = 300
 
 vim.opt.laststatus = 3
+vim.opt.statusline = " %f %m %= %l:%c ♥ "
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.opt.lazyredraw = true
+
+vim.g.netrw_banner = 1
+vim.g.netrw_liststyle = 3
+vim.g.netrw_bufsettings = 'nonu nornu noma ro nobl'
+vim.g.netrw_browse_split = 0 -- (4 to open in other window)
+vim.g.netrw_altfile = 0 -- (4 to open in other window)
+vim.g.netrw_list_hide = '^\\.\\.\\?/$,\\(^\\|\\s\\s\\)\\zs\\.\\S\\+'
+

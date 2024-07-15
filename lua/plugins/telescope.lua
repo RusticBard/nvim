@@ -1,6 +1,5 @@
 return {
   'nvim-telescope/telescope.nvim',
-  event = 'BufReadPost',
   dependencies = {
     'nvim-lua/plenary.nvim'
   },
@@ -44,13 +43,13 @@ return {
       }
     end, { desc = '[/] Fuzzily search in current buffer]' })
 
-    vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-    vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-    vim.keymap.set('n', '<leader>sg', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-    vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-    vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-    vim.keymap.set('n', '<leader>sc', '<cmd>Telescope find_files cwd=~/.config<CR>', { desc = '[S]earch [F]iles' })
-    vim.keymap.set('n', '<leader>sw', '<cmd>Telescope find_files cwd=/mnt/c/Users/sanket/Others/Workspace<CR>', { desc = '[S]earch [W]orkspace'})
-
+    vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[s]earch [f]iles' })
+    vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[s]earch [h]elp' })
+    vim.keymap.set('n', '<leader>sg', require('telescope.builtin').grep_string, { desc = '[s]earch current [w]ord' })
+    vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[s]earch by [g]rep' })
+    vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[s]earch [d]iagnostics' })
+    vim.keymap.set('n', '<leader>sc', '<cmd>Telescope find_files cwd=~/.config<CR>', { desc = '[s]earch [f]iles' })
+    vim.keymap.set('n', '<leader>sw', '<cmd>Telescope find_files cwd=~/Others/Workspace<CR>', { desc = '[S]earch [W]orkspace'})
+    vim.keymap.set('n', '<leader>so', '<cmd>Telescope oldfiles<CR>', { desc = '[s]earch [o]ldfiles' })
   end
 }
