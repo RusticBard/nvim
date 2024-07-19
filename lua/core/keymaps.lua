@@ -61,7 +61,8 @@ vim.keymap.set('n', '<leader>sk', '<CMD>Telescope keymaps<CR>', { desc = '[s]Sho
 vim.keymap.set('n', '<leader>sl', '<CMD>Lazy<CR>', { desc = '[s]how [l]azy' })
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-vim.keymap.set('n', '<leader>fe', '<CMD>Neotree float toggle %:p:h reveal_force_cwd<CR>', { desc = '[f]ile [e]xplorer' })
+--vim.keymap.set('n', '<leader>fe', '<CMD>Neotree float toggle %:p:h reveal_force_cwd<CR>', { desc = '[f]ile [e]xplorer' })
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
