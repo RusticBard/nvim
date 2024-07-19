@@ -25,7 +25,7 @@ vim.keymap.set('v', 'y', 'ygv<ESC>', { desc = 'Yank and stay where the cursor is
 vim.keymap.set('x', '<leader>p', [["_dP]], { desc = '[P]reserve text in buffer during paste' })
 
 -- Replace all instances of given word
-vim.keymap.set('n', '<leader>sr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+vim.keymap.set('n', '<leader>rr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = '[S]earch and [R]eplace' })
 
 -- Make the file excutable
@@ -60,6 +60,9 @@ vim.keymap.set('n', '<leader>cy', '<CMD>let @\"=@+<CR>', { desc = '[c]lipboard t
 vim.keymap.set('n', '<leader>sk', '<CMD>Telescope keymaps<CR>', { desc = '[s]Show [k]eymaps' })
 vim.keymap.set('n', '<leader>sl', '<CMD>Lazy<CR>', { desc = '[s]how [l]azy' })
 
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('n', '<leader>fe', '<CMD>Neotree float toggle %:p:h reveal_force_cwd<CR>', { desc = '[f]ile [e]xplorer' })
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -76,16 +79,3 @@ vim.keymap.set('n', '<leader>rf', function()
 
   vim.cmd('terminal ' .. current_buf_wd .. '/run.sh')
 end)
-
-
-vim.keymap.set('n', '<leader>fe', function ()
-  if vim.bo.filetype == 'netrw' then
-    vim.api.nvim_command('Rex')
-    if vim.bo.filetype == 'netrw' then
-      vim.api.nvim_command('bdel')
-    end
-  else
-    vim.api.nvim_command('Ex')
-  end
-end
-  , { desc = '[f]ile [e]xplorer' })

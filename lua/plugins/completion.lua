@@ -3,23 +3,23 @@ return {
   lazy = false,
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
-    {'williamboman/mason.nvim', lazy = true},
-    {'williamboman/mason-lspconfig.nvim', lazy = true},
+    { 'williamboman/mason.nvim',           lazy = true },
+    { 'williamboman/mason-lspconfig.nvim', lazy = true },
 
     -- Additional lua configuration, makes nvim stuff amazing
-    {'folke/neodev.nvim', lazy = true},
+    { 'folke/neodev.nvim',                 lazy = true },
 
     -- Completion
-    {'hrsh7th/nvim-cmp', lazy = true, event = "InsertEnter"},
+    { 'hrsh7th/nvim-cmp',                  lazy = true, event = "InsertEnter" },
 
-    {'hrsh7th/cmp-nvim-lsp', lazy = true},
-    {'hrsh7th/cmp-buffer', lazy = true},
-    {'hrsh7th/cmp-path', lazy = true},
-    {'hrsh7th/cmp-cmdline', lazy = true},
-    {'hrsh7th/cmp-nvim-lua', lazy = true},
-    {'L3MON4D3/LuaSnip', lazy = true},
-    {'saadparwaiz1/cmp_luasnip', lazy = true},
-    {'SmiteshP/nvim-navic'},
+    { 'hrsh7th/cmp-nvim-lsp',              lazy = true },
+    { 'hrsh7th/cmp-buffer',                lazy = true },
+    { 'hrsh7th/cmp-path',                  lazy = true },
+    { 'hrsh7th/cmp-cmdline',               lazy = true },
+    { 'hrsh7th/cmp-nvim-lua',              lazy = true },
+    { 'L3MON4D3/LuaSnip',                  lazy = true },
+    { 'saadparwaiz1/cmp_luasnip',          lazy = true },
+    { 'SmiteshP/nvim-navic' },
   },
   config = function()
     -- LSP settings.
@@ -44,7 +44,9 @@ return {
         { desc = '[W]orkspace [S]ymbols' })
       vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { desc = '[D]iagnostic [N]ext' })
       vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { desc = '[D]iagnostic [P]revious' })
-      vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, { desc = '[R]ename [R]eferences' })
+      vim.keymap.set('n', '<leader>dr', vim.lsp.buf.rename, { desc = '[R]ename [R]eferences' })
+      vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+      vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
       -- See `:help K` for why this keymap
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })

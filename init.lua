@@ -1,6 +1,6 @@
 -- vim.loader.enable()
 
-local theme = "bamboo" --main, moon, dawn
+local theme = "jellybeans-nvim" --main, moon, dawn
 vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -66,4 +66,4 @@ require("lazy").setup({ { import = "plugins" }, { import = "colorschemes" } }, o
 
 vim.cmd('colorscheme ' .. theme)
 
-vim.cmd('highlight MsgArea guibg=#2D312C gui=bold guisp=NONE')
+vim.cmd('highlight! default link MsgArea lualine_c_normal ')

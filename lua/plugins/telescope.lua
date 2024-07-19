@@ -1,8 +1,29 @@
 return {
   'nvim-telescope/telescope.nvim',
   dependencies = {
-    'nvim-lua/plenary.nvim'
+    'nvim-lua/plenary.nvim',
+    { -- if encountering errors, see telescope-fzf-native readme for installation instructions
+      'nvim-telescope/telescope-fzf-native.nvim',
+
+      -- `build` is used to run some command when the plugin is installed/updated.
+      -- this is only run then, not every time neovim starts up.
+      build = 'make',
+
+      -- `cond` is a condition used to determine whether this plugin should be
+      -- installed and loaded.
+      cond = function()
+        return vim.fn.executable 'make' == 1
+      end,
+    },
+    { 'nvim-telescope/telescope-ui-select.nvim' },
+
+    -- useful for getting pretty icons, but requires a nerd font.
+    {
+      'nvim-tree/nvim-web-devicons',
+      enabled = vim.g.have_nerd_font
+    },
   },
+  event = 'VimEnter',
   lazy = false,
   config = function()
     require('telescope').setup {
@@ -21,6 +42,9 @@ return {
         },
       },
       extensions = {
+        ['ui-select'] = {
+          require('telescope.themes').get_dropdown(),
+        },
         media_files = {
           -- filetypes whitelist
           -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
@@ -32,6 +56,7 @@ return {
 
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'media_files')
+    pcall(require('telescope').load_extension, 'ui-select')
 
     -- See `:help telescope.builtin`
     vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -46,10 +71,11 @@ return {
     vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[s]earch [f]iles' })
     vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[s]earch [h]elp' })
     vim.keymap.set('n', '<leader>sg', require('telescope.builtin').grep_string, { desc = '[s]earch current [w]ord' })
-    vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[s]earch by [g]rep' })
+    vim.keymap.set('n', '<leader>s.', require('telescope.builtin').live_grep, { desc = '[s]earch by [g]rep' })
     vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[s]earch [d]iagnostics' })
     vim.keymap.set('n', '<leader>sc', '<cmd>Telescope find_files cwd=~/.config<CR>', { desc = '[s]earch [f]iles' })
-    vim.keymap.set('n', '<leader>sw', '<cmd>Telescope find_files cwd=~/Others/Workspace<CR>', { desc = '[S]earch [W]orkspace'})
+    vim.keymap.set('n', '<leader>sw', '<cmd>Telescope find_files cwd=~/Others/Workspace<CR>',
+      { desc = '[S]earch [W]orkspace' })
     vim.keymap.set('n', '<leader>so', '<cmd>Telescope oldfiles<CR>', { desc = '[s]earch [o]ldfiles' })
   end
 }
