@@ -44,7 +44,11 @@ return {
       },
       palettes = {},
       specs = {},
-      groups = {},
+      groups = {
+        all = {
+          NormalFloat = "#FFFFFF"
+        }
+      },
     })
   end
 }

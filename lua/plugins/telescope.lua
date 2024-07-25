@@ -47,7 +47,7 @@ return {
           previewer = false,
           layout_config = {
             height = 0.8,
-            width = 0.75,
+            width = 0.8,
           }
         },
         buffers = {
@@ -55,7 +55,7 @@ return {
           previewer = false,
           layout_config = {
             height = 0.8,
-            width = 0.75,
+            width = 0.8,
           }
         }
       },
