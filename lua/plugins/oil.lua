@@ -84,7 +84,7 @@ return {
       use_default_keymaps = true,
       view_options = {
         -- Show files and directories that start with "."
-        show_hidden = false,
+        show_hidden = true,
         -- This function defines what is considered a "hidden" file
         is_hidden_file = function(name, bufnr)
           return vim.startswith(name, ".")
@@ -124,8 +124,8 @@ return {
       float = {
         -- Padding around the floating window
         padding = 2,
-        max_width = 0,
-        max_height = 0,
+        max_width = 90,
+        max_height = 40,
         border = "rounded",
         win_options = {
           winblend = 0,

@@ -52,7 +52,7 @@ vim.keymap.set('n', '<S-TAB>', '<cmd>bprevious<CR>', { desc = '[b]uffer [p]revio
 vim.keymap.set('n', '<TAB>', '<cmd>bnext<CR>', { desc = '[b]uffer [n]ext' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[b]uffer [d]elete' })
 
-vim.keymap.set('n', '<leader>af', '<CMD>Format<CR>', { desc = '[a]djust [f]ormatting' })
+-- vim.keymap.set('n', '<leader>af', '<CMD>Format<CR>', { desc = '[a]djust [f]ormatting' })
 
 vim.keymap.set('n', '<leader>yc', '<CMD>let @+=@\"<CR>', { desc = '[y]ank to [c]lipboard' })
 vim.keymap.set('n', '<leader>cy', '<CMD>let @\"=@+<CR>', { desc = '[c]lipboard to [c]ank' })
@@ -62,7 +62,7 @@ vim.keymap.set('n', '<leader>sl', '<CMD>Lazy<CR>', { desc = '[s]how [l]azy' })
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 --vim.keymap.set('n', '<leader>fe', '<CMD>Neotree float toggle %:p:h reveal_force_cwd<CR>', { desc = '[f]ile [e]xplorer' })
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

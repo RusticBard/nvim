@@ -1,6 +1,6 @@
 -- vim.loader.enable()
 
-local theme = "jellybeans-nvim" --main, moon, dawn
+local theme = "carbonfox" --main, moon, dawn
 vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -66,4 +66,5 @@ require("lazy").setup({ { import = "plugins" }, { import = "colorschemes" } }, o
 
 vim.cmd('colorscheme ' .. theme)
 
-vim.cmd('highlight! default link MsgArea lualine_c_normal ')
+vim.cmd('highlight! default link MsgArea lualine_c_normal')
+vim.cmd('highlight! default link lualine_c_normal CursorLine')

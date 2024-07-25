@@ -7,7 +7,7 @@ return {
     require('lualine').setup {
       options = {
         icons_enabled = true,
-        theme = 'jellybeans',
+        theme = 'auto',
         component_separators = '',
         section_separators = { left = '', right = '' }, --
       },
@@ -27,7 +27,7 @@ return {
           show_filename_only = true,
           hide_filename_extension = true,
           show_modified_status = true,
-          mode = '0',
+          mode = '1',
 
           filetype_names = {
             TelescopePrompt = 'Telescope',
