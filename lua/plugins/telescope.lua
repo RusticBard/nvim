@@ -30,8 +30,8 @@ return {
       defaults = {
         layout_config = {
           horizontal = {
-            height = 99999,
-            width = 99999,
+            height = 0.99,
+            width = 0.99,
             preview_width = 0.6,
           },
         },
@@ -40,6 +40,24 @@ return {
             ['<esc>'] = require('telescope.actions').close,
           },
         },
+      },
+      pickers = {
+        current_buffer_fuzzy_find = {
+          theme = "dropdown",
+          previewer = false,
+          layout_config = {
+            height = 0.8,
+            width = 0.75,
+          }
+        },
+        buffers = {
+          theme = "dropdown",
+          previewer = false,
+          layout_config = {
+            height = 0.8,
+            width = 0.75,
+          }
+        }
       },
       extensions = {
         ['ui-select'] = {
@@ -73,7 +91,7 @@ return {
     vim.keymap.set('n', '<leader>sg', require('telescope.builtin').grep_string, { desc = '[s]earch current [w]ord' })
     vim.keymap.set('n', '<leader>s.', require('telescope.builtin').live_grep, { desc = '[s]earch by [g]rep' })
     vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[s]earch [d]iagnostics' })
-    vim.keymap.set('n', '<leader>sc', '<cmd>Telescope find_files cwd=~/.config<CR>', { desc = '[s]earch [f]iles' })
+    vim.keymap.set('n', '<leader>sc', '<cmd>Telescope find_files cwd=~/.config<CR>', { desc = '[s]earch [c]onfig' })
     vim.keymap.set('n', '<leader>sw', '<cmd>Telescope find_files cwd=~/Others/Workspace<CR>',
       { desc = '[S]earch [W]orkspace' })
     vim.keymap.set('n', '<leader>so', '<cmd>Telescope oldfiles<CR>', { desc = '[s]earch [o]ldfiles' })
