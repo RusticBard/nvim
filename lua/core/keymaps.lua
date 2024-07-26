@@ -80,5 +80,3 @@ vim.keymap.set('n', '<leader>rf', function()
 
   vim.cmd('terminal ' .. current_buf_wd .. '/run.sh')
 end)
-
-vim.keymap.set('n', '<leader>st', '<CMD>Huez<CR>', { desc = "[s]how [t]hemes" })

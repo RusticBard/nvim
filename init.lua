@@ -66,5 +66,4 @@ require("lazy").setup({ { import = "plugins" }, { import = "colorschemes" } }, o
 
 vim.cmd('colorscheme ' .. theme)
 
-vim.cmd('highlight! default link MsgArea lualine_c_normal')
-vim.cmd('highlight! default link lualine_c_normal CursorLine')
+require("core.highlights")

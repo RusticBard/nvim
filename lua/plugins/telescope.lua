@@ -46,7 +46,7 @@ return {
           theme = "dropdown",
           previewer = false,
           layout_config = {
-            height = 0.8,
+            height = 0.9,
             width = 0.8,
           }
         },
@@ -95,5 +95,7 @@ return {
     vim.keymap.set('n', '<leader>sw', '<cmd>Telescope find_files cwd=~/Others/Workspace<CR>',
       { desc = '[S]earch [W]orkspace' })
     vim.keymap.set('n', '<leader>so', '<cmd>Telescope oldfiles<CR>', { desc = '[s]earch [o]ldfiles' })
+    vim.keymap.set('n', '<leader>sth', '<cmd>Telescope highlights<CR>', { desc = '[s]earch [t]elescope [h]ighlights' })
+    vim.keymap.set('n', '<leader>st', '<CMD>Telescope colorschemes<CR>', { desc = "[s]how [t]hemes" })
   end
 }
