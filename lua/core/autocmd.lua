@@ -41,3 +41,24 @@ vim.api.nvim_create_autocmd('bufWrite', {
     vim.lsp.buf.format()
   end,
 })
+
+-- Function to check if the cursorline is centered and apply zz if necessary
+local function ensure_centered()
+  -- Get the current window and cursor position
+  local window_height = vim.api.nvim_win_get_height(0)
+  local cursor_row = vim.fn.line(".")
+  local end_row = vim.fn.line("$")
+
+  local half_window_height = math.floor(window_height / 2)
+
+  if math.abs(end_row - cursor_row) < half_window_height then
+    -- Perform zz if not centered and cursor is near the end
+    vim.cmd("normal! zz")
+  end
+end
+
+-- Create the autocommand
+vim.api.nvim_create_autocmd("CursorMoved", {
+  pattern = "*",
+  callback = ensure_centered,
+})
