@@ -6,6 +6,9 @@ vim.opt.showmode = false
 vim.o.conceallevel = 2
 vim.opt.cmdheight = 0
 
+vim.opt.shortmess:append("I") -- Suppress intro message
+vim.opt.shortmess:append("c") -- Suppress "Press ENTER" messages in certain cases
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 -- vim.opt.colorcolumn = '80'
