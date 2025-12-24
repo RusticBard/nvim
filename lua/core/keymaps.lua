@@ -16,7 +16,6 @@ vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'keep cursor on same line during j' }
 vim.keymap.set('n', '<c-d>', '<c-d>zz', { desc = 'less movement of cursor during <c-d>' })
 vim.keymap.set('n', '<c-u>', '<c-u>zz', { desc = 'less movement of cursor during <c-u>' })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'less movement of cursor during n' })
-vim.keymap.set('n', 'n', 'nzzzv', { desc = 'less movement of cursor during n' })
 vim.keymap.set('n', '{', '{zz', { desc = 'sentence jumps backward with less cursor motion' })
 vim.keymap.set('n', '}', '}zz', { desc = 'sentence jumps forward with less cursor motion' })
 vim.keymap.set('v', 'y', 'ygv<ESC>', { desc = 'Yank and stay where the cursor is at the end' })
@@ -52,10 +51,17 @@ vim.keymap.set('n', '<S-TAB>', '<cmd>bprevious<CR>', { desc = '[b]uffer [p]revio
 vim.keymap.set('n', '<TAB>', '<cmd>bnext<CR>', { desc = '[b]uffer [n]ext' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[b]uffer [d]elete' })
 
--- vim.keymap.set('n', '<leader>af', '<CMD>Format<CR>', { desc = '[a]djust [f]ormatting' })
+-- Yank from default register (") to System Clipboard (+)
+vim.keymap.set('n', '<leader>yc', function()
+  vim.fn.setreg('+', vim.fn.getreg('"'))
+  print("Copied to clipboard")
+end, { desc = '[y]ank to [c]lipboard' })
 
-vim.keymap.set('n', '<leader>yc', '<CMD>let @+=@\"<CR>', { desc = '[y]ank to [c]lipboard' })
-vim.keymap.set('n', '<leader>cy', '<CMD>let @\"=@+<CR>', { desc = '[c]lipboard to [c]ank' })
+-- Copy from System Clipboard (+) to default register (")
+vim.keymap.set('n', '<leader>cy', function()
+  vim.fn.setreg('"', vim.fn.getreg('+'))
+  print("Copied to yank")
+end, { desc = '[c]lipboard to [y]ank' })
 
 vim.keymap.set('n', '<leader>sk', '<CMD>Telescope keymaps<CR>', { desc = '[s]Show [k]eymaps' })
 vim.keymap.set('n', '<leader>sl', '<CMD>Lazy<CR>', { desc = '[s]how [l]azy' })

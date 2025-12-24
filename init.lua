@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 require("core.options")
 require("core.keymaps")
 require("core.autocmd")
+require("lsp")
 
 local opts = {
   defaults = {
@@ -67,3 +68,14 @@ require("lazy").setup({ { import = "plugins" }, { import = "colorschemes" } }, o
 vim.cmd('colorscheme ' .. theme)
 
 require("core.highlights")
+
+-- Functin to clear backgrounds
+local function transparent_bg()
+  local groups = { "Normal", "NormalFloat", "NormalNC", "SignColumn", "FoldColumn", "StatusLine", "StatusLineNC" }
+  for _, group in ipairs(groups) do
+    vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
+  end
+end
+
+-- Run it now
+transparent_bg()
