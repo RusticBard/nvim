@@ -79,3 +79,6 @@ end
 
 -- Run it now
 transparent_bg()
+
+vim.api.nvim_set_hl(0, "Visual", { bg = "#4F5258", fg = "NONE" })
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3F4144" })
