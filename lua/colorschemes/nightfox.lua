@@ -46,7 +46,7 @@ return {
       specs = {},
       groups = {
         all = {
-          NormalFloat = { bg = "palette.cyan" }
+          NormalFloat = { bg = "palette.cyan" },
         },
       },
     })

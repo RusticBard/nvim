@@ -4,12 +4,24 @@ M.setup = function()
     -- 1. Load the core theme
     vim.cmd("colorscheme carbonfox")
 
-    -- 2. Define standard highlights (using Lua API for better performance)
+    -- 2. Define standard highlights
     local groups = {
-        -- The vertical separator you liked
+        -- The vertical separator
         WinSeparator = { fg = "#525252", bg = "none" },
         
-        -- Transparency Overrides
+        -- HIGH CONTRAST OVERRIDES
+        -- Visual: Make selection a distinct blue/gray that pops
+        Visual = { bg = "#3e4452", fg = "none", bold = true },
+        
+        -- CursorLine: The background of the current line
+        -- We give it a slightly lighter gray than the background so it's visible
+        CursorLine = { bg = "#424242" }, 
+        
+        -- CursorLineNr: The line number of the current line
+        -- Made it a bright white/orange to stand out
+        CursorLineNr = { fg = "#f2ce00", bold = true },
+
+        -- Transparency Overrides (keeping your previous settings)
         Normal       = { bg = "none" },
         NormalNC     = { bg = "none" },
         NormalFloat  = { bg = "none" },
@@ -25,7 +37,6 @@ M.setup = function()
     end
 
     -- 3. Link Lualine and Message Area components
-    -- These ensure your command area matches your statusline style
     local links = {
         ['MsgArea'] = 'lualine_c_normal',
         ['lualine_c_normal'] = 'CursorLine',
