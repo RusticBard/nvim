@@ -65,20 +65,5 @@ local opts = {
 
 require("lazy").setup({ { import = "plugins" }, { import = "colorschemes" } }, opts)
 
-vim.cmd('colorscheme ' .. theme)
-
-require("core.highlights")
-
--- Functin to clear backgrounds
-local function transparent_bg()
-  local groups = { "Normal", "NormalFloat", "NormalNC", "SignColumn", "FoldColumn", "StatusLine", "StatusLineNC" }
-  for _, group in ipairs(groups) do
-    vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
-  end
-end
-
--- Run it now
-transparent_bg()
-
-vim.api.nvim_set_hl(0, "Visual", { bg = "#4F5258", fg = "NONE" })
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3F4144" })
+-- Clean and simple init.lua call
+require("core.highlights").setup()

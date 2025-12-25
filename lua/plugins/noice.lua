@@ -10,6 +10,11 @@ return {
     cmdline = {
       enabled = true,
       view = "cmdline", -- Use the classic bottom line instead of a popup
+      format = {
+        cmdline = {
+          icon = ">",
+        },
+      },
     },
     -- 2. Disable the popup search
     messages = {
