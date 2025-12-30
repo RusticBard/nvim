@@ -3,7 +3,7 @@ My personal neovim config :)
 
 ### Screenshots :
 
-
-![Screenshot from 2024-07-26 08-14-01](https://github.com/user-attachments/assets/dbda917e-e4c2-4ea6-89e3-f2460e2b98cb)
-
-![Screenshot from 2024-07-26 08-14-32](https://github.com/user-attachments/assets/e9bca20d-05ca-42fc-9d67-72924d5ce1dc)
+<img width="2470" height="1585" alt="Screenshot 2025-12-30 161900" src="https://github.com/user-attachments/assets/c7b302ca-f463-44e3-bafe-45c696a0390a" />
+<img width="2470" height="1585" alt="Screenshot 2025-12-30 161711" src="https://github.com/user-attachments/assets/36a99332-d808-4717-bc53-7e962ac0562d" />
+<img width="2470" height="1585" alt="Screenshot 2025-12-30 161644" src="https://github.com/user-attachments/assets/53a5cfcc-54d0-4ad7-a24a-3f237c42b912" />
+<img width="2470" height="1585" alt="Screenshot 2025-12-30 161622" src="https://github.com/user-attachments/assets/d2755722-3427-4513-ae3d-3329b60208e6" />
