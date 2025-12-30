@@ -1,52 +1,42 @@
-local my_augroup = vim.api.nvim_create_augroup("UserAutocmds", { clear = true })
-
--- Openhelp in a new buffer instead of a vsplit
-vim.api.nvim_create_autocmd('BufWinEnter', {
-  group = my_augroup,
-  pattern = '*',
-  callback = function(event)
-    if vim.bo[event.buf].filetype == 'help' then
-      vim.cmd.only()
-      vim.bo.buflisted = true
-    end
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
   end,
 })
 
--- Hide/Show lualine in command mode
-local status_ok, lualine = pcall(require, "lualine")
-if status_ok then
-  vim.api.nvim_create_autocmd('CmdlineEnter', {
-    group = my_augroup,
-    callback = function() lualine.hide({}) end,
-  })
-
-  vim.api.nvim_create_autocmd('CmdlineLeave', {
-    group = my_augroup,
-    callback = function() lualine.hide({ unhide = true }) end,
-  })
+local function get_theme_color(group, attr)
+    local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+    local color = hl[attr]
+    return color and string.format("#%06x", color) or nil
 end
 
--- Alpha Dashboard UI management
-vim.api.nvim_create_autocmd("User", {
-  group = my_augroup,
-  pattern = "AlphaReady",
-  command = "set laststatus=0"
-})
+local statusline_group = vim.api.nvim_create_augroup('ModeStatusLine', { clear = true })
 
-vim.api.nvim_create_autocmd("User", {
-  group = my_augroup,
-  pattern = "AlphaClosed",
-  command = "set laststatus=3",   -- Returns to your global statusline
-})
+local function update_hl()
+    local mode_colors = {
+        n = get_theme_color('Function', 'fg') or '#81a1c1',
+        i = get_theme_color('String', 'fg')   or '#a3be8c',
+        v = get_theme_color('Statement', 'fg') or '#b48ead',
+        V = get_theme_color('Statement', 'fg') or '#b48ead',
+        ['\22'] = get_theme_color('Statement', 'fg') or '#b48ead',
+        R = get_theme_color('ErrorMsg', 'fg') or '#bf616a',
+    }
 
--- Auto-format on save (LSP)
-vim.api.nvim_create_autocmd('BufWritePre', {
-  group = my_augroup,
-  pattern = '*',
-  callback = function()
-    local clients = vim.lsp.get_clients({ bufnr = 0 })
-    if #clients > 0 then
-      vim.lsp.buf.format({ async = false })
-    end
-  end,
+    local mode = vim.fn.mode()
+    -- Only update if the mode is in our list; otherwise, default to Normal (blue)
+    local color = mode_colors[mode] or mode_colors['n']
+    local normal_bg = get_theme_color('Normal', 'bg') or '#1e1e1e'
+
+    vim.api.nvim_set_hl(0, 'StatusLine', { bg = color, fg = normal_bg, bold = true })
+end
+
+-- Events that reliably trigger mode-based UI changes
+vim.api.nvim_create_autocmd({ 'VimEnter', 'ModeChanged', 'ColorScheme' }, {
+    group = statusline_group,
+    callback = update_hl,
 })
