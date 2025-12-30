@@ -4,7 +4,7 @@ vim.opt.mouse = ""
 vim.opt.mousescroll = "ver:0,hor:0"
 vim.opt.showmode = false
 vim.o.conceallevel = 2
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 
 vim.opt.shortmess:append("I") -- Suppress intro message
 vim.opt.shortmess:append("c") -- Suppress "Press ENTER" messages in certain cases
