@@ -24,12 +24,7 @@ vim.keymap.set("v", "y", "ygv<ESC>", { desc = "Yank and stay where the cursor is
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "[P]reserve text in buffer during paste" })
 
 -- Replace all instances of given word
-vim.keymap.set(
-	"n",
-	"<leader>rr",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ desc = "[S]earch and [R]eplace" }
-)
+vim.keymap.set("n", "sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[S]earch and [R]eplace" })
 
 -- Make the file excutable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make e[x]ecutable" })
